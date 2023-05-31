@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Django Website!</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'Styles.css' %}">
+    </head>
+    <body class="first-page">
+        <h1>Hello Everyone, welcome to my project in Django!</h1>
+        <h2>My name is Uriel Lozano and I am an applied physics graduate who is aiming to further their career in software.</h2>
+        {% block content %}
+        <form method="post" action="{% url 'scrape_prices' %} ">
+        <h3>Enter Item You Would like to look for in Newegg.</h3>
+            <input type="placeholder" name = "search_term"><br>
+        <input type="submit">
+        {% endblock %}
+    </body>
+</html>

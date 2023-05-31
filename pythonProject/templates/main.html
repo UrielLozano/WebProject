@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Website!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Styles.css' %}">
+</head>
+<body>
+    <h1>List of Items</h1>
+    <table class="styled-table">
+        <thead>
+            <tr class="active-row">
+                <th>Item</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in sorted_items %}
+            <tr>
+                <td>{{item.item}} </td>
+                <td>${{ item.price }} </td>
+                <td>{{ item.rating }}</td>
+                <td><a href={{item.link}}> Product link </a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
